@@ -10,7 +10,6 @@ class Projetos(models.Model):
     publico_alvo  = models.CharField(max_length=250,blank=False,null=False)
     data_criacao  = models.DateTimeField(auto_now=True)
     data_atualizacao = models.DateTimeField(auto_now_add=True)
-    preco = models.DecimalField()
 
     def __str__(self):
         return self.nome
