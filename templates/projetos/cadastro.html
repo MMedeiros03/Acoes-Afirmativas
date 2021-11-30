@@ -1,0 +1,43 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <h2>Cadastrar Projeto</h2>
+
+    <div>
+        <form action="submit" method="post">{% csrf_token %}
+            <input type="number" name="id_evento" value="{{ projetos.id }}" hidden>
+            <label>Titulo</label>
+            <br>
+            <input type="text" name="titulo" value="{{ projetos.nome }}">
+            <br>
+            <label>Local</label>
+            <br>
+            <input type="text" name="local" value="{{ projetos.tematica }}">
+            <br>
+            <label>Publico Alvo</label>
+            <br>
+            <input type="text" name="local" value="{{ projetos.publico_alvo }}">
+            <br>
+            <label>Descrição</label>
+            <br>
+            <textarea name="descricao" cols="23" rows="5">{{ projetos.objetivo }}</textarea>
+            <br>
+
+            <label>justificativa</label>
+            <br>
+            <textarea name="descricao" cols="23" rows="5">{{ projetos.justificativa }}</textarea>
+            <br>
+
+            <label>Data</label>
+            <br>
+            <input type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
+            <br><br>
+            <button type="submit">Salvar</button>
+            <a href="/">
+                <button type="button">Cancelar</button>
+            </a>
+        </form>
+    </div>
+
+
+{% endblock %}

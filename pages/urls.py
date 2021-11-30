@@ -1,9 +1,10 @@
 from django.urls import path
-from . import views
-
+from projetos.views import Cadastrar_Projeto
+from django.views.generic import RedirectView
 
 app_name = "pages"
 
 urlpatterns = [
-    path("", views.HomePageView.as_view(), name="home"),
+    path('',RedirectView.as_view(url="/home/")),
+    path("projeto/cadastrar",Cadastrar_Projeto),
 ]
