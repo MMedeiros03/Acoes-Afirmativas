@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fluindo{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin:0 auto;
+    padding:0 2%;
+}
+
+html,body{
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+header{
+    height: 200px;
+    padding:20px 0;
+    }
+
+.logo{
+width: 50%;
+}
+
+.partedecima{
+    padding-top: 20px;
+    width:50%;
+    text-align: right;
+    }
+
+.partedecima a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+section.texto{
+    height: calc(100% - 200px);
+    position: relative;
+
+}
+
+.desing{
+    position: absolute;
+    bottom: -450px;
+    right: -500px;
+    height: 800px;
+    width: 1000px;
+    border-radius: 50%;
+    background-color: #22af31;
+        
+}
+
+.texto-sobre{
+    margin-top: 100px;
+}
+
+.texto-sobre{
+    font-size: 50px;
+}
