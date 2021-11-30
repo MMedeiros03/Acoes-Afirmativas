@@ -1,4 +1,8 @@
 h1{
-    color:aqua;
-    font-family:'Times New Roman', Times, serif
+    color:rgb(19, 85, 85);
+    font-family:'Times New Roman', Times, serif;
 }
+div{
+  background-color: rgb(19, 85, 85);
+}
+  
