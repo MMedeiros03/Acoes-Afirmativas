@@ -64,3 +64,19 @@ section.texto{
 .texto-sobre{
     font-size: 50px;
 }
+#site{
+	width: 800px;
+	margin: 10px auto;
+}
+h1{
+	text-align: center;
+    margin-top: -90px;
+    
+}
+
+h5{
+    position: absolute;
+    text-align: center;
+    width: 800px;
+    margin: 10px
+}
