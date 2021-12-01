@@ -32,4 +32,4 @@ def Cadastrar_Projeto(request):
                                     data_evento=data_evento,
                                     usuario=usuario,
                                     local=local)
-    return redirect("/")
+    return redirect("projetos/cadastro.html")
