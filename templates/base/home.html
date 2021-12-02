@@ -6,4 +6,16 @@
     Olá!
     <br>
     <a href="#">Adicionar projetos</a>
+        <div>
+            {% if projetos %}
+                {% for projeto in projetos %}
+                <h2>
+                    Nome do projeto -->> {{ projeto.nome }} <br>
+                </h2>
+                {% endfor %}
+            {% else %}
+                <h1>SEM PROJETOS CADASTRADOS</h1>
+            {% endif %}
+        </div>
+    
 {% endblock %}

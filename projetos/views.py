@@ -5,7 +5,14 @@ from .models import Projetos
 
 # Create your views here.
 
-@login_required(login_url="/login/")
+def listar_projetos(request):
+    projeto = Projetos.objects.all()
+    print(projeto)
+    dados = {"projetos": projeto}
+    return render(request,"base/home.html",dados)
+
+'''
+@login_required(login_url="/accounts/login/")
 def Cadastrar_Projeto(request):
     if request.POST:
         titulo = request.POST.get("titulo")
@@ -33,3 +40,5 @@ def Cadastrar_Projeto(request):
                                     usuario=usuario,
                                     local=local)
     return redirect("projetos/cadastro.html")
+'''
+
