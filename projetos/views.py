@@ -11,34 +11,36 @@ def listar_projetos(request):
     dados = {"projetos": projeto}
     return render(request,"base/home.html",dados)
 
-'''
+
+@login_required(login_url="/accounts/login/")
+def projeto(request):
+    id_projeto = request.GET.get('id')
+    dados = {}
+    if id_projeto:
+        dados['projeto'] = Projetos.objects.get(id=id_projeto)
+    return render(request,"projetos/cadastro.html",dados)
+
 @login_required(login_url="/accounts/login/")
 def Cadastrar_Projeto(request):
     if request.POST:
-        titulo = request.POST.get("titulo")
-        descricao = request.POST.get("descricao")
-        data_evento = request.POST.get("data_evento")
-        local = request.POST.get("local")
-        usuario = request.user
-        id_evento = request.POST.get("id_evento")
-        if id_evento:
-            #evento = Evento.objects.get(id=id_evento)
-            # if evento.usuario == usuario:
-            #     evento.titulo = titulo
-            #     evento.descricao = descricao
-            #     evento.local = local
-            #     evento.data_evento = data_evento
-            #     evento.save()
-            Projetos.objects.filter(id=id_evento).update(titulo=titulo,
-                                                        descricao=descricao,
-                                                        data_evento=data_evento,
-                                                        local=local)
+        nome = request.POST.get("nome")
+        tematica = request.POST.get("tematica")
+        objetivo = request.POST.get("objetivo")
+        justificativa = request.POST.get("justificativa")
+        publico_alvo = request.POST.get("publico_alvo")
+        id_projeto = request.POST.get("id_projeto")
+        if id_projeto:
+            Projetos.objects.filter(id=id_projeto).update(nome=nome,
+                                                        tematica=tematica,
+                                                        objetivo=objetivo,
+                                                        justificativa=justificativa,
+                                                        publico_alvo=publico_alvo)   
         else:
-            Projetos.objects.create(titulo=titulo,
-                                    descricao=descricao,
-                                    data_evento=data_evento,
-                                    usuario=usuario,
-                                    local=local)
-    return redirect("projetos/cadastro.html")
-'''
+            Projetos.objects.create(nome=nome,
+                                    tematica=tematica,
+                                    objetivo=objetivo,
+                                    justificativa=justificativa,
+                                    publico_alvo=publico_alvo)
+    return redirect("/")
+
 

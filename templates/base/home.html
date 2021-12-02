@@ -5,7 +5,9 @@
 {% block content %}
     Olá!
     <br>
-    <a href="#">Adicionar projetos</a>
+    <a href="{% url 'projetos:projeto' %}">
+        <button type="button">Novo Projeto</button>
+    </a>
         <div>
             {% if projetos %}
                 {% for projeto in projetos %}

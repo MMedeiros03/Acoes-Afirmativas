@@ -8,11 +8,3 @@ class HomePageView(TemplateView):
 
 class AcoesAfirmativas(TemplateView):    
     template_name = "acoesafirmativas/acoes.html"
-
-
-def listar_projetos(request):
-    projeto = Projetos.objects.all()
-    print(projeto)
-    dados = {"projetos": projeto}
-    print(dados)
-    return render(request,"base/home.html",dados)
