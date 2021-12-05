@@ -7,4 +7,6 @@ class HomePageView(TemplateView):
     template_name = "base/home.html"
 
 class AcoesAfirmativas(TemplateView):    
-    template_name = "acoesafirmativas/acoes.html"
+    template_name = "acoesafirmativas/teste.html"
+
+

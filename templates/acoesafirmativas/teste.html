@@ -1,6 +1,9 @@
-<html>
-    <head>
-<title>Ações Afirmativas</title>
+{% extends 'base/base.html' %}
+
+{% block content %} 
+
+<head>
+{% block title%}Acoes Afirmativas{% endblock %}
 <link rel="stylesheet" href="teste.css">
 <meta nome="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     </head>
@@ -8,12 +11,6 @@
             <header>
             <div class="fluindo">
                 <div class="logo"><img src="assets/Logo.png" /></div><!--logo-->
-                <div class="partedecima">
-                    <a href="#">Inicio</a>
-                    <a href="#">Ações</a>
-                    <a href="#">Sobre Nós</a>
-                    <a href="#">Login / Inscreva-se</a>
-                    </div><!--partedecima-->
             </div><!--fluindo-->
              </header>
              <section class="texto">
@@ -24,4 +21,4 @@
                         <h5> Ações Afirmativas são medidas que visam o direito do cidadão a ter acesso ao emprego e à educação. Na contemporaneidade, essas ações buscam diminuir a desigualdade social entre as pessoas permitindo-lhes ter as mesmas condições e oportunidades no meio acadêmico e profissional, independente de cor ou classe social. Primordialmente no Brasil, ações afirmativas se estabelecem mediante aos mecanismos de cotas, os quais destinam-se às minorias, como: negros, indígenas, cidadãos com baixa renda. Desse modo, políticas públicas voltadas às necessidades de grupos marginalizados, possibilitam a inserção social desses indivíduos na sociedade. Entretanto, no cenário contemporâneo, existem diversos projetos os quais possuem como objetivo proporcionar a maior equidade possível. Porém, por não possuir transparência de informações, a população que poderia estar sendo beneficiada com essas iniciativas, não têm conhecimento sobre essas propostas. Contudo, as ações afirmativas são martirizadas a partir do momento que a inclusão remete-se a questões étnicas, por conta da supervalorização do povo mestiço na sociedade Brasileira, esse fato levou a problematização das cotas serem restritas a certos grupos étnicos. Em vista disso, diversas pessoas questionam a utilidade dessas ações existirem, fundadas em argumentações precedentes de que, por exemplo, cotas raciais não são necessárias, pois todos possuem as mesmas oportunidades. Dessa forma, tornou-se necessário debater sobre essa problemática para o entendimento da necessidade tornar-se essencial, a datar dessas pessoas não terem a representatividade dentro de universidades e cargos públicos. Conforme dados divulgados pelo IBGE, no ano de 2018 cerca de 18,3% dos jovens pretos e pardos haviam iniciado e concluído sua graduação, em consoante com a informação, no mesmo ano 36,1% dos  jovens brancos estavam iniciando e concluindo a graduação do ensino superior. Portanto, é notável que a representatividade dos jovens pretos e pardos nas universidades é questionável. Desse modo, faz-se necessária a intervenção das ações afirmativas em todos os casos, visando a máxima democratização e compartilhamento dos projetos que representam estas ações.</h5>
                    </div>             
         </body>
-</html>
+{% endblock %}
