@@ -6,7 +6,7 @@
     <h2>Cadastrar Projeto</h2>
 
     <div>
-        <form action="submit" method="post">{% csrf_token %}
+        <form action="submit" method="POST">{% csrf_token %}
             <input type="number" name="id_evento" value="{{ projetos.id_projeto }}" hidden>
             <label>Nome</label>
             <br>

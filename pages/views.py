@@ -9,4 +9,7 @@ class HomePageView(TemplateView):
 class AcoesAfirmativas(TemplateView):    
     template_name = "acoesafirmativas/teste.html"
 
+class SobreNos(TemplateView):
+    template_name = "sobre-nos/sobrenos.html"
+
 
