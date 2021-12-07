@@ -144,6 +144,12 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+STATICFILES_DIRS =[ 
+    os.path.join(BASE_DIR, 'static/css'),
+]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = "/"
