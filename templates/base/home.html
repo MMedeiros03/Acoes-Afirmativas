@@ -5,7 +5,7 @@
 {% block content %} 
 
 {% load static %}
-<center>
+<center id="main-projetos">
     <div class="container-projetos">
         {% if projetos %}
             {% for projeto in projetos %}
@@ -16,15 +16,11 @@
         </div>
         {% else %}
         <h1>SEM PROJETOS CADASTRADOS</h1>
-        {% endif %}
-    
-        <br>
-        <br>
-        <br>
-        <a href="projeto/">
-            <button type="button">Novo Projeto</button>
-        </a>
+        {% endif %}  
     </div>
 </center>
+<a href="projeto/">
+    <button type="button">Novo Projeto</button>
+</a>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}

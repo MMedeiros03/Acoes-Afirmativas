@@ -10,9 +10,17 @@
     border-radius: 30px;
     box-shadow: 3px 3px 10px rgb(158, 150, 150);
     float: right;
-
 }
 .container-projetos{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(163, 163, 162);
     align-items: auto;
+
+}
+
+a{
+    margin-left: auto;
+}
+
+#main-projetos{
+    padding-right: 20%;
 }

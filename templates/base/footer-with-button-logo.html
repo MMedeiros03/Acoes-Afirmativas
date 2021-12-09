@@ -25,9 +25,10 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="{% url 'pages:acoes' %}">Ações Afirmativas</a></li>
-                        <li><a href="{% url 'account_login' %}">Entrar</a></li>
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'account_logout' %}">Sair</a></li>
+                        {% else %}
+                        <li><a href="{% url 'account_login' %}">Entrar</a></li>
                         {% endif %}
                     </ul>
                 </div>
