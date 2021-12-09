@@ -130,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/imgens/'
+STATIC_URL = 'static/'
 
 
 # Default primary key field type
@@ -145,9 +145,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 STATICFILES_DIRS =[ 
-    os.path.join(BASE_DIR, 'static/css'),
+    os.path.join(BASE_DIR,'static'),
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
 
 SITE_ID = 1

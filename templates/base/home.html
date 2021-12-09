@@ -2,22 +2,25 @@
 
 {% block title %}Repositório Ações Afirmativas{% endblock %}
 
-{% block content %}
-    Olá!
-    <br>
-    <a href="{% url 'projetos:projeto' %}">
-        <button type="button">Novo Projeto</button>
-    </a>
-        <div>
-            {% if projetos %}
-                {% for projeto in projetos %}
-                <h2>
-                    Nome do projeto -->> {{ projeto.nome }} <br>
-                </h2>
-                {% endfor %}
-            {% else %}
-                <h1>SEM PROJETOS CADASTRADOS</h1>
-            {% endif %}
+{% block content %} 
+
+{% load static %}
+<center id="main-projetos">
+    <div class="container-projetos">
+        {% if projetos %}
+            {% for projeto in projetos %}
+            <div class="projetos">
+                {{ projeto.nome }}
+            </div>
+            {% endfor %}
         </div>
-    
+        {% else %}
+        <h1>SEM PROJETOS CADASTRADOS</h1>
+        {% endif %}  
+    </div>
+</center>
+<a href="projeto/">
+    <button type="button">Novo Projeto</button>
+</a>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}

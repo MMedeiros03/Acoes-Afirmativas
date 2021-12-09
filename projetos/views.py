@@ -14,7 +14,7 @@ def listar_projetos(request):
 
 @login_required(login_url="/accounts/login/")
 def projeto(request):
-    id_projeto = request.GET.get('id')
+    id_projeto = request.GET.get('id_projeto')
     dados = {}
     if id_projeto:
         dados['projeto'] = Projetos.objects.get(id=id_projeto)
