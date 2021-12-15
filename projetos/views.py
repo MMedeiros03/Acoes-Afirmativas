@@ -1,13 +1,11 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
-
 from .models import Projetos
 
 # Create your views here.
 
 def listar_projetos(request):
     projeto = Projetos.objects.all()
-    print(projeto)
     dados = {"projetos": projeto}
     return render(request,"base/home.html",dados)
 
@@ -43,4 +41,8 @@ def Cadastrar_Projeto(request):
                                     publico_alvo=publico_alvo)
     return redirect("/")
 
-
+@login_required(login_url="/accounts/login/")
+def Detalhes_Projeto(request,pk=None,*args,**kwargs):
+    projeto = get_object_or_404(Projetos,pk = pk)
+    print(projeto)
+    return render(request,"projetos/detalhes.html",{"projeto":projeto})

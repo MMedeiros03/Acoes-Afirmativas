@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.db.models.fields.files import ImageField
+from django.urls import reverse
 # Create your models here.
 
 class Projetos(models.Model):
@@ -10,12 +11,14 @@ class Projetos(models.Model):
     publico_alvo  = models.CharField(max_length=250,blank=False,null=False)
     data_criacao  = models.DateTimeField(auto_now=True)
     data_atualizacao = models.DateTimeField(auto_now_add=True)
-    
+    imagem        = models.ImageField(upload_to='static/imagens/')
+    anexo         = models.FileField(upload_to='static/anexos/')
+
     class Meta:
         db_table = "Projeto"
     
     def __str__(self):
         return self.nome
      
-    
-    
+    def get_absolute_url(self):
+        return '/projetos/{}/'.format(self.pk)

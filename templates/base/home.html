@@ -9,9 +9,11 @@
     <div class="container-projetos">
         {% if projetos %}
             {% for projeto in projetos %}
-            <div class="projetos">
-                {{ projeto.nome }}
-            </div>
+            <a href="{{projeto.get_absolute_url}}">
+                <div class="projetos">
+                    {{ projeto.nome }}
+                </div>
+            </a>
             {% endfor %}
         </div>
         {% else %}

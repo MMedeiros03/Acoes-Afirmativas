@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block tittle %} Detalhamento do Projeto {% endblock %}
+
+{% block content %}
+    <h1>Nome do Projeto: {{projeto.nome}}</h1> <br>
+    <h2>Tematica: {{projeto.tematica}}</h2> <br>
+    <h2>Objetivo: {{projeto.objetivo}}</h2> <br>
+    <h2>Justificativa: {{projeto.justificativa}}</h2> <br>
+    <h2>publico_alvo: {{projeto.publico_alvo}}</h2> <br>
+    <h2>data_criacao: {{projeto.data_criacao}}</h2> <br>
+{% endblock %}
