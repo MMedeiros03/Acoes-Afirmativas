@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'usuario',
     'projetos',
     'pages',
+    'pesquisa',
 
     #allauth
     'allauth',

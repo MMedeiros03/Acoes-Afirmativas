@@ -13,7 +13,8 @@ class Projetos(models.Model):
     data_atualizacao = models.DateTimeField(auto_now_add=True)
     imagem        = models.ImageField(upload_to='static/imagens/')
     anexo         = models.FileField(upload_to='static/anexos/')
-
+    ativo         = models.BooleanField(default=False)
+    destaque      = models.BooleanField(default=False)
     class Meta:
         db_table = "Projeto"
     
