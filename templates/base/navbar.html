@@ -1,0 +1,38 @@
+{% load static %}
+
+<link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+<header class="header__container">
+    <div class="header__content container">
+      <a class="nav-links" href="#home">Repositório de<br>Açoes Afirmativas</a>
+
+      <nav class="nav__container" id="nav-menu">
+        <ul class="nav__content">
+          <li><a href="#acoesafirmativas" class="nav-links">Ações Afirmativas</a></li>
+          <li><a href="#projetos" class="nav-links">Projetos</a></li>
+          <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
+          <li><a href="#login" class="nav-links">Entrar</a></li>
+        </ul>
+      </nav>
+
+      <div class="search__container" id="search-container">
+        <div class="search-content">
+          <div class="search__content">
+            <input
+              type="text"
+              name="pokemon"
+              id="input-pokemon"
+              placeholder="Pesquise Aqui"
+            />
+            <a href="#" class="search-btn" id="search-btn"
+              ><i class="ri-search-line"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <script src="{% static 'js/main.js' %}"></script>
