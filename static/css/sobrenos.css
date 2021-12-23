@@ -391,6 +391,19 @@ button:not(:disabled),
   padding: 0;
   border-style: none;
 }
+.logo_ifsc{
+  width: max-content;
+  height: max-content;
+  margin-left: 65%;
+}
+.img-ifsc{
+  width: 250px;
+  height: 250px;
+}
+.fluindo{
+  width: max-content;
+  height: max-content;
+}
 
 textarea {
   resize: vertical;
@@ -11289,10 +11302,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  padding-top: 3.375rem;
-  color: #6c757d;
-}
+
 
 @media (min-width: 992px) {
   body {
@@ -11408,12 +11418,9 @@ p.lead {
 }
 
 section.resume-section {
+  margin-top: -5%;
   display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  align-items: center; 
   max-width: 75rem;
 }
 section.resume-section .resume-section-content {

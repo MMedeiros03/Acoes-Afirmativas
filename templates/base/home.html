@@ -3,7 +3,26 @@
 {% block title %}Repositório Ações Afirmativas{% endblock %}
 
 {% block content %} 
-    
-{% load static %}
 
+{% load static %}
+<center id="main-projetos">
+    <div class="container-projetos">
+        {% if projetos %}
+            {% for projeto in projetos %}
+            <a href="{{projeto.get_absolute_url}}">
+                <div class="projetos">
+                    {{ projeto.nome }}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h1>SEM PROJETOS CADASTRADOS</h1>
+        {% endif %}  
+    </div>
+</center>
+<a href="projeto/">
+    <button type="button">Novo Projeto</button>
+</a>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}

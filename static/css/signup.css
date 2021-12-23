@@ -1,33 +1,32 @@
-main .container{
-    background-color: red;
-}
-h2{
-    text-align: center;
-}
-#div_id_login{
+#div_id_username{
     width: 150px;
     text-align: center;
     margin-left: 45%;
-}
-#div_id_password{
-    width: 150px;
-    text-align: center;
-    margin-left: 45%;
-}
-#div_id_remember{
-    width: 150px;
-    text-align: center;
-    margin-left: 45%;
-}
-#btn-entrar{
-    width: 150px;
-    text-align: center;
-    margin-left: 45%;
-}
-#id_remember{
-    margin-left: -15%;
-}
-.entrar{
-    margin-left: -3%;
 }
 
+#div_id_email{
+    width: 150px;
+    text-align: center;
+    margin-left: 45%;
+}
+
+#div_id_password1{
+    width: 150px;
+    text-align: center;
+    margin-left: 45%;
+}
+
+#div_id_password2{
+    width: 150px;
+    text-align: center;
+    margin-left: 45%;
+}
+
+#btn-signup{
+    width: 150px;
+    text-align: center;
+    margin-left: 45%;
+}
+.text-signup{
+    margin-left: 45.5%;
+}
