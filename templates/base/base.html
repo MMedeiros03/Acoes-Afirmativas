@@ -272,15 +272,23 @@
               </div>
             </div>
           </div>
-        </div>
+        <center>
+          <a href="{% url 'pages:acoes' %}">
+            <button class="more-btn">
+              <i class="ri-add-line"></i>
+            </button>
+          </a>
+        </center>
       </section>
 
       <section class="pokedex__container" id="projetos">
         <h2 class="pokedex__title">Projetos em Destaque</h2>
         <div class="pokedex__content container"></div>
-        <button class="more-btn" onclick="getPokemons()">
-          <i class="ri-add-line"></i>
-        </button>
+        <a href="{% url 'pages:sobrenos' %}">
+          <button class="more-btn">
+            <i class="ri-add-line"></i>
+          </button>
+        </a>
       </section>
 
       <section class="about__container" id="sobrenos">
