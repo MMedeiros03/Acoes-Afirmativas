@@ -165,7 +165,7 @@ main {
   line-height: 8rem;
 }
 
-.generations__container {
+.actions__container {
   width: 100%;
 
   position: relative;
@@ -183,7 +183,7 @@ main {
   top: 50%;
   right: 0;
 }
-.generations__content {
+.actions__content {
   margin: 112px auto 0;
 
   text-align: center;
@@ -191,7 +191,7 @@ main {
   color: var(--text-color);
 }
 
-.generations__cards__container {
+.actions__cards__container {
   margin: 5rem 0;
 
   width: 100%;
@@ -203,7 +203,7 @@ main {
   gap: 10rem;
 }
 
-.generations__line {
+.actions__line {
   width: 0.7rem;
   height: 100%;
 
@@ -233,6 +233,8 @@ main {
   width: 330px;
 
   border-radius: 1rem;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 .dot {
   background-color: var(--text-color);
@@ -261,7 +263,7 @@ main {
   order: 2;
 }
 
-.pokedex__container {
+.actx__container {
   width: 100%;
 
   margin: 10rem 0;
@@ -274,7 +276,7 @@ main {
 
   color: var(--text-color);
 }
-.pokedex__content {
+.actx__content {
   height: 90%;
 
   position: relative;
@@ -304,7 +306,7 @@ main {
 .more-btn:hover {
   background-color: var(--primary-color);
 }
-.card__pokedex {
+.card__actx {
   width: 220px;
   height: 220px;
   background-color: var(--secondary-color);
@@ -322,16 +324,16 @@ main {
 
   transition: 0.3s;
 }
-.card__pokedex:hover {
+.card__actx:hover {
   background-color: var(--primary-color);
 }
-.card__pokedex__title {
+.card__actx__title {
   padding: 4rem 0 2rem;
 
   pointer-events: none;
 }
 
-.card__pokedex img {
+.card__actx img {
   height: 90px;
   width: 90px;
 
@@ -462,7 +464,7 @@ main {
 .close-modal i {
   font-size: 3rem;
 }
-.modal__pokemon {
+.modal__action {
   width: 30%;
   max-width: 350px;
   height: 70%;
@@ -557,7 +559,7 @@ main {
   background-color: var(--primary-color);
 }
 
-.pokemon__image {
+.action__image {
   height: 30%;
   width: auto;
 
@@ -570,14 +572,14 @@ main {
 
   margin-bottom: 8rem;
 }
-#pokemon-img {
+#action-img {
   height: 100%;
 }
 .rotate-pokeball {
   animation: pokeball 1.5s 2 linear;
 }
 
-.pokemon__container {
+.action__container {
   width: 80%;
 
   display: flex;
@@ -588,7 +590,7 @@ main {
 
   color: var(--text-color);
 }
-.pokemon__description {
+.action__description {
   text-align: justify;
 }
 
@@ -709,21 +711,21 @@ main {
     transform: translateX(-50%);
   }
 
-  .pokedex__content {
+  .actx__content {
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 2rem;
   }
 
-  .card__pokedex {
+  .card__actx {
     width: 190px;
     height: 190px;
   }
 
-  .card__pokedex__title {
+  .card__actx__title {
     padding: 3rem 0 2rem;
   }
 
-  .card__pokedex img {
+  .card__actx img {
     height: 70px;
     width: 70px;
   }
@@ -767,11 +769,11 @@ main {
     width: 40%;
   }
 
-  .modal__pokemon {
+  .modal__action {
     width: 100%;
     max-width: 350px;
   }
-  .pokemon__image {
+  .action__image {
     height: 25%;
   }
 }
@@ -921,17 +923,17 @@ main {
     padding: 2rem 0;
   }
 
-  .pokedex__content {
+  .actx__content {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 2rem;
   }
 
-  .card__pokedex {
+  .card__actx {
     width: 160px;
     height: 160px;
   }
 
-  .card__pokedex img {
+  .card__actx img {
     height: 50px;
     width: 50px;
   }
@@ -946,19 +948,19 @@ main {
     width: 220px;
   }
 
-  .pokedex__content {
+  .actx__content {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   }
 
-  .card__pokedex {
+  .card__actx {
     width: 130px;
     height: 130px;
   }
-  .card__pokedex__title {
+  .card__actx__title {
     padding: 2.5rem 0 1.5rem;
   }
 
-  .card__pokedex img {
+  .card__actx img {
     height: 40px;
     width: 40px;
   }
@@ -967,11 +969,11 @@ main {
     height: 200px;
   }
 
-  .modal__pokemon {
+  .modal__action {
     width: 100%;
     max-width: 300px;
   }
-  .pokemon__image {
+  .action__image {
     height: 20%;
   }
 
@@ -990,11 +992,11 @@ main {
 }
 
 @media screen and (max-width: 366px) {
-  .modal__pokemon {
+  .modal__action {
     width: 100%;
     max-width: 250px;
   }
-  .pokemon__image {
+  .action__image {
     top: 3.5rem;
   }
 }
@@ -1007,7 +1009,7 @@ main {
     height: 180px;
   }
 
-  .pokemon__image {
+  .action__image {
     width: auto;
     height: auto;
   }
@@ -1023,9 +1025,4 @@ main {
 
 #img_sobre_nos{
   height: 250px;
-}
-
-.btn_acoes{
-  width: 200px;
-  height: 200px;
 }
