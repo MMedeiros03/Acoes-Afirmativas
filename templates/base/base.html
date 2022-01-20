@@ -23,7 +23,16 @@
             <li><a href="#acoesafirmativas" class="nav-links">Ações Afirmativas</a></li>
             <li><a href="#projetos" class="nav-links">Projetos</a></li>
             <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
-            <li><a href="#login" class="nav-links">Entrar</a></li>
+            {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'account_login' %}"class="nav-links">Entrar</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Cadastro</a>
+                    </li>
+            {% endif %}
           </ul>
         </nav>
   
@@ -218,39 +227,6 @@
       </section>
     </main>
 
-    <div class="modal__container" id="modal-container">
-      <div class="modal__action" id="modal-action">
-        <i class="i-container">
-          <h2 class="modal__title">Who is this ifsc?</h2>
-          <i class="i-left"></i>
-          <i class="i-right"></i>
-        </i>
-
-        <div class="action__image">
-          <img
-            id="action-img"
-            src="./assets/img/pokeball.svg"
-            alt="ifsc image"
-          />
-        </div>
-        <div class="action__container">
-          <h2 class="action__name">???</h2>
-          <p class="action__description">...</p>
-        </div>
-
-        <button class="close-modal" id="close-modal">
-          <i class="ri-close-line"></i>
-        </button>
-      </div>
-
-      <div class="modal__content" id="modal-fail">
-        <h2 class="modal__title">Pokémon not found!</h2>
-        <img src="./assets/img/error.gif" alt="Image Fail" />
-        <button class="close-modal" id="close-modal">
-          <i class="ri-close-line"></i>
-        </button>
-      </div>
-    </div>
 
     <footer class="footer__container">
       <div class="footer__content container">

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <title>Ações Afirmativas</title>
+  </head>
+  <body>
+    <header class="header__container">
+      <div class="header__content container">
+        <a class="nav-links" href="#home">Repositório de<br>Açoes Afirmativas</a>
+  
+        <nav class="nav__container" id="nav-menu">
+          <ul class="nav__content">
+            <li><a href="#acoesafirmativas" class="nav-links">Ações Afirmativas</a></li>
+            <li><a href="#projetos" class="nav-links">Projetos</a></li>
+            <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
+            <li><a href="#login" class="nav-links">Entrar</a></li>
+          </ul>
+        </nav>
+  
+        <div class="search__container" id="search-container">
+          <div class="search-content">
+            <div class="search__content">
+              <input
+                type="text"
+                name="pokemon"
+                id="input-pokemon"
+                placeholder="Pesquise Aqui"
+              />
+              <a href="#" class="search-btn" id="search-btn"
+                ><i class="ri-search-line"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+    </header>
+    
+    <section class="actx__container" id="pokedex">
+        <div class="actx__content container">
+            {% for projeto in projetos %}
+                <div class="projetos">
+                  <p class="text_projeto">{{ projeto.nome }}</p>
+                </div>
+            {% endfor %}
+        </div>
+      </section>
+
+  </body>
+</html>

@@ -6,8 +6,15 @@ from .models import Projetos
 
 def listar_projetos(request):
     projeto = Projetos.objects.all()
+    print(projeto)
+    return render(request,"projetos/listagem.html",{"projetos":projeto})
+
+# Função para listar projetos em destaque
+def listar_projetos_destaque(request):
+    projeto = Projetos.Objects.destaque()
+    print(projeto)
     dados = {"projetos": projeto}
-    return render(request,"base/home.html",dados)
+    return render(request,"base/base.html",dados)
 
 
 @login_required(login_url="/accounts/login/")

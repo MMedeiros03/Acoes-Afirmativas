@@ -42,9 +42,11 @@ a {
 
 .header__container {
   width: 100%;
-  height: 8rem;
+  height: max-content;
+  padding-bottom: 10px;
+  padding-top: 10px;
 
-  position: fixed;
+  position: inherit;
   z-index: 100;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
@@ -1026,3 +1028,15 @@ main {
 #img_sobre_nos{
   height: 250px;
 }
+.projetos{
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    background-color: #12e740;
+    border-radius: 10px;
+}
+
+.text_projeto{
+  margin-top: 5px;
+}
+
