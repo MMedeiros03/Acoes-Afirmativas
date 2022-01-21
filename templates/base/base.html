@@ -16,7 +16,7 @@
   <body>
     <header class="header__container">
       <div class="header__content container">
-        <a class="nav-links" href="#home">Repositório de<br>Açoes Afirmativas</a>
+        <a class="nav-links" href="/">Repositório de<br>Açoes Afirmativas</a>
   
         <nav class="nav__container" id="nav-menu">
           <ul class="nav__content">
@@ -25,12 +25,12 @@
             <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
             {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
+                        <a class="nav-links" href="{% url 'account_logout' %}">Sair</a>
                     </li>
                     {% else %}
                     <li><a href="{% url 'account_login' %}"class="nav-links">Entrar</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Cadastro</a>
+                        <a class="nav-links" href="{% url 'account_signup' %}">Cadastro</a>
                     </li>
             {% endif %}
           </ul>
@@ -183,10 +183,18 @@
 
       <section class="actx__container" id="projetos">
         <h2 class="actx__title">Projetos em Destaque</h2>
-        <div class="actx__content container"></div>
-        <button class="more-btn" onclick="getPokemons()">
-          <i class="ri-add-line"></i>
-        </button>
+        <div class="actx__content container">
+            {% for projeto in projetos %}
+            <div class="projetos_destaque">
+                <p class="text_projeto">{{projeto.nome}}</p>
+              </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'projetos:listar' %}">
+          <button class="more-btn">
+            <i class="ri-add-line"></i>
+          </button>
+        </a>
       </section>
 
       <section class="about__container" id="sobrenos">
