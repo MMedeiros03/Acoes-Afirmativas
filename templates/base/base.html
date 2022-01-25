@@ -70,7 +70,7 @@
         <div class="actions__content container">
           <img class="bg-image bg1" src="{% static 'imagens/bg1.svg' %}" alt="" />
           <img class="bg-image bg2" src="{% static 'imagens/bg2.svg' %}"alt="" />
-          <h2 class="section__title">acoesafirmativas</h2>
+          <h2 class="section__title">Ações<br> Afirmativas</h2>
 
           <div class="actions__cards__container">
             <div class="actions__line"></div>
@@ -185,8 +185,10 @@
         <h2 class="actx__title">Projetos em Destaque</h2>
         <div class="actx__content container">
             {% for projeto in projetos %}
-            <div class="projetos_destaque">
-                <p class="text_projeto">{{projeto.nome}}</p>
+              <div class="projetos_destaque">
+                <a href="{{ projeto.get_abosulute_url }}">
+                  <p class="text_projeto">{{ projeto.nome }}</p>
+                </a>
               </div>
             {% endfor %}
         </div>

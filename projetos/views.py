@@ -1,3 +1,4 @@
+from xml.sax.handler import property_interning_dict
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Projetos
@@ -12,7 +13,6 @@ def listar_projetos(request):
 # Função para listar projetos em destaque
 def listar_projetos_destaque(request):
     projeto = Projetos.Objects.destaque()
-    print(projeto)
     dados = {"projetos": projeto}
     return render(request,"base/base.html",dados)
 
@@ -48,8 +48,8 @@ def Cadastrar_Projeto(request):
                                     publico_alvo=publico_alvo)
     return redirect("/")
 
-@login_required(login_url="/accounts/login/")
-def Detalhes_Projeto(request,pk=None,*args,**kwargs):
-    projeto = get_object_or_404(Projetos,pk = pk)
-    print(projeto)
+
+def Detalhes_Projeto(request,id=None,*args,**kwargs):
+    projeto = get_object_or_404(Projetos,id = id)
     return render(request,"projetos/detalhes.html",{"projeto":projeto})
+

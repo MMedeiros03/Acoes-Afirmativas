@@ -57,7 +57,9 @@
         <div class="actx__content container">
             {% for projeto in projetos %}
                 <div class="projetos">
-                  <p class="text_projeto">{{ projeto.nome }}</p>
+                  <a href="{{projeto.get_absolute_url}}">
+                    <p class="text_projeto">{{ projeto.nome }}</p>
+                  </a>
                 </div>
             {% endfor %}
         </div>

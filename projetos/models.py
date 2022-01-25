@@ -41,4 +41,4 @@ class Projetos(models.Model):
         return self.nome
      
     def get_absolute_url(self):
-        return '/projetos/{}/'.format(self.pk)
+        return reverse("projetos:detalhes_projeto",args=[self.id]) 
