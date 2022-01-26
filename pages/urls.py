@@ -1,5 +1,5 @@
 from django.urls import path
-from projetos.views import listar_projetos_destaque,Detalhes_Projeto
+from projetos.views import listar_projetos_destaque
 from .views import AcoesAfirmativas,SobreNos
 from django.views.generic import RedirectView
 app_name = "pages"
