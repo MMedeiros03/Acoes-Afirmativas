@@ -405,21 +405,18 @@ main {
 
 .footer__container {
   width: 100%;
+  position: relative;
   padding: 3rem 0;
   color: var(--text-color-alt);
   background-color: var(--gray-color);
 }
 .footer__content {
   margin: auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 100%;
-
   gap: 0.5rem;
-
   font-size: 1.6rem;
 }
 
@@ -1051,4 +1048,11 @@ main {
 
 #btn_acoes{
   margin-left: 48.5%;
+}
+
+.acoes_content{
+  text-align: center;
+  width: 40%;
+  margin-left: 20%;
+  background-color: #2d8b42;
 }
