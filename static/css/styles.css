@@ -1056,3 +1056,11 @@ main {
   margin-left: 20%;
   background-color: #2d8b42;
 }
+
+.acoes__description {
+  text-align: justify;
+  color: black;
+  font-size: 20px;
+  margin-top: -30px;
+  font-family: Arial, Helvetica, sans-serif;
+}

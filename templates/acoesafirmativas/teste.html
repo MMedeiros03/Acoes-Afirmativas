@@ -20,9 +20,9 @@
   
         <nav class="nav__container" id="nav-menu">
           <ul class="nav__content">
-            <li><a href="#acoesafirmativas" class="nav-links">Ações Afirmativas</a></li>
-            <li><a href="#projetos" class="nav-links">Projetos</a></li>
-            <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
+            <li><a href="/" class="nav-links">Ações Afirmativas</a></li>
+            <li><a href="/" class="nav-links">Projetos</a></li>
+            <li><a href="/" class="nav-links">Sobre-nós</a></li>
             {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-links" href="{% url 'account_logout' %}">Sair</a></li>
             {% else %}
@@ -48,40 +48,82 @@
           </div>
         </div>
     </header>
+    <section class="actions__container" id="acoesafirmativas">
+      <div class="actions__content container">
+        <img class="bg-image bg1" src="{% static 'imagens/bg1.svg' %}" alt="" />
+        <img class="bg-image bg2" src="{% static 'imagens/bg2.svg' %}"alt="" />
+        <h2 class="section__title">Ações<br> Afirmativas</h2>
 
-    <main>
-        <div class="acoes_content">
-            <p class="lead mb-5">Ações Afirmativas são medidas que visam o direito do cidadão a ter acesso ao emprego e à educação.
+        <div class="actions__cards__container">
+          <div class="actions__line"></div>
+
+          <div class="cards__container">
+            <img src="{% static 'imagens/ifsc.png' %}"  alt="*ifsc image" />
+            <div class="dot"></div>
+            <div class="card__text__container">
+              <p class="acoes__description">
+                Ações Afirmativas são medidas que visam o direito do cidadão a ter acesso ao emprego e à educação.
                 Na contemporaneidade, essas ações buscam diminuir a desigualdade social entre as pessoas permitindo-lhes ter as 
                 mesmas condições e oportunidades no meio acadêmico e profissional, independente de cor ou classe social. 
                 Primordialmente no Brasil, ações afirmativas se estabelecem mediante aos mecanismos de cotas, os quais destinam-se 
-                às minorias, como: negros, indígenas, cidadãos com baixa renda. 
-                Desse modo, políticas públicas voltadas às necessidades de grupos marginalizados, possibilitam a inserção 
-                social desses indivíduos na sociedade. Entretanto, no cenário contemporâneo, existem diversos projetos os quais possuem
+                às minorias, como: negros, indígenas, cidadãos com baixa renda. Desse modo, políticas públicas voltadas às necessidades de grupos marginalizados, possibilitam a inserção 
+                social desses indivíduos na sociedade.
+              </p>
+            </div>
+          </div>
+          <div class="cards__container">
+            <img
+              class="inverter-image"
+              src="{% static 'imagens/ifsc.png' %}"
+              alt="action image"
+            />
+            <div class="dot"></div>
+            <div class="card__text__container inverter-text">
+              <p class="acoes__description">
+                Entretanto, no cenário contemporâneo, existem diversos projetos os quais possuem
                 como objetivo proporcionar a maior equidade possível. Porém, por não possuir transparência de informações, 
                 a população que poderia estar sendo beneficiada com essas iniciativas, não têm conhecimento sobre essas propostas. 
                 Contudo, as ações afirmativas são martirizadas a partir do momento que a inclusão remete-se a questões étnicas,
                 por conta da supervalorização do povo mestiço na sociedade Brasileira, esse fato levou a problematização das cotas serem
                 restritas a certos grupos étnicos. Em vista disso, diversas pessoas questionam a utilidade dessas ações existirem, 
                 fundadas em argumentações precedentes de que, por exemplo, cotas raciais não são necessárias, pois todos possuem as mesmas
-                oportunidades. Dessa forma, tornou-se necessário debater sobre essa problemática para o entendimento da necessidade tornar-se
+                oportunidades.
+              </p>
+            </div>
+          </div>
+
+          <div class="cards__container">
+            <img src="{% static 'imagens/ifsc.png' %}" alt="ifsc image" />
+            <div class="dot"></div>
+            <div class="card__text__container">
+              <p class="acoes__description">
+                Dessa forma, tornou-se necessário debater sobre essa problemática para o entendimento da necessidade tornar-se
                 essencial, a datar dessas pessoas não terem a representatividade dentro de universidades e cargos públicos. Conforme dados divulgados 
                 pelo IBGE, no ano de 2018 cerca de 18,3% dos jovens pretos e pardos haviam iniciado e concluído sua graduação, em consoante com a informação,
                 no mesmo ano 36,1% dos  jovens brancos estavam iniciando e concluindo a graduação do ensino superior. Portanto, é notável que a representatividade
-                dos jovens pretos e pardos nas universidades é questionável. Desse modo, faz-se necessária a intervenção das ações afirmativas em todos
+                dos jovens pretos e pardos nas universidades é questionável.
+              </p>
+            </div>
+          </div>
+
+          <div class="cards__container">
+            <img
+              class="inverter-image"
+              src="{% static 'imagens/ifsc.png' %}"
+              alt="action image"
+            />
+            <div class="dot"></div>
+            <div class="card__text__container inverter-text">
+              <p class="acoes__description">
+                Desse modo, faz-se necessária a intervenção das ações afirmativas em todos
                 os casos, visando a máxima democratização e compartilhamento dos projetos que representam estas ações.
-            </p>
+              </p>
+            </div>
+          </div>
         </div>
-    </main>
-
-
-    <footer class="footer__container">
-      <div class="footer__content container">
-        <i class="ri-copyright-line"></i>
-        <p class="copy">2021 devCleidison. All rights reserved.</p>
       </div>
-    </footer>
-
+    </section>
+  
     <script src="{% static 'js/apiConsumer.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
   </body>

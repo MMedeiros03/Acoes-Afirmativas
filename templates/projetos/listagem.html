@@ -20,18 +20,14 @@
   
         <nav class="nav__container" id="nav-menu">
           <ul class="nav__content">
-            <li><a href="#acoesafirmativas" class="nav-links">Ações Afirmativas</a></li>
-            <li><a href="#projetos" class="nav-links">Projetos</a></li>
-            <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
+            <li><a href="/" class="nav-links">Ações Afirmativas</a></li>
+            <li><a href="/" class="nav-links">Projetos</a></li>
+            <li><a href="/" class="nav-links">Sobre-nós</a></li>
             {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-links" href="{% url 'account_logout' %}">Sair</a>
-                    </li>
-                    {% else %}
-                    <li><a href="{% url 'account_login' %}"class="nav-links">Entrar</a></li>
-                    <li class="nav-item">
-                        <a class="nav-links" href="{% url 'account_signup' %}">Cadastro</a>
-                    </li>
+            <li class="nav-item"><a class="nav-links" href="{% url 'account_logout' %}">Sair</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-links" href="{% url 'account_login' %}">Entrar</a></li>
+            <li class="nav-item"><a class="nav-links" href="{% url 'account_signup' %}">Cadastro</a></li>
             {% endif %}
           </ul>
         </nav>
