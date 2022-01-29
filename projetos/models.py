@@ -1,10 +1,10 @@
-from multiprocessing.managers import BaseManager
+from django.db.models import Q
 from django.db import models
 from django.db.models.fields.files import ImageField
 from django.urls import reverse
 # Create your models here.
 
-class ProductQuerySet(models.query.QuerySet):
+class ProjetoQuerySet(models.query.QuerySet):
 
     def ativo(self): # função para produtos disponiveis
         return self.filter(ativo = True)
@@ -12,13 +12,22 @@ class ProductQuerySet(models.query.QuerySet):
     def destaque(self): # função dos produtos em destaque.
         return self.filter(destaque = True, ativo = True)
 
-class ProductManager(models.Manager):
+    def search(self, query):
+        lookups = (Q(nome__icontains = query) | 
+                        Q(tematica__icontains = query) | 
+                        Q(publico_alvo__icontains = query))
+        return self.filter(lookups).distinct()
+
+class ProjetoManager(models.Manager):
 
     def get_queryset(self):
-        return ProductQuerySet(self.model, using=self.db)
+        return ProjetoQuerySet(self.model, using=self.db)
 
     def destaque(self):
         return self.get_queryset().destaque()
+
+    def search(self,query):
+        return self.get_queryset().search(query)
 
 class Projetos(models.Model):
     nome          = models.CharField(max_length=250,blank=False,null=False)
@@ -32,8 +41,8 @@ class Projetos(models.Model):
     anexo         = models.FileField(upload_to='static/anexos/')
     ativo         = models.BooleanField(default=False)
     destaque      = models.BooleanField(default=False)
-    Objects       = ProductManager()
-    objects       = ProductManager()
+    Objects       = ProjetoManager()
+    objects       = ProjetoManager()
     class Meta:
         db_table = "Projeto"
     

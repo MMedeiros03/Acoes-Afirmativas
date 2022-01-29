@@ -52,18 +52,37 @@
           </div>
         </div>
     </header>
-    
+
+    <div class='row mb-3'>
+        {% if query %}
+        <div class='col 12'>
+            Resultado para <b>{{ query }}</b>
+        </div>
+        {% else %}
+        <div class='col-12 col-md-8 mx-auto py-5'>
+          <form method="GET" action="{% url 'pesquisa:query' %}">
+            <input
+              type="search"
+              name="q"
+              aria-label="Search" 
+              value='{{ request.GET.q }}'
+              placeholder="Pesquise Aqui"
+            />
+          </form>
+        </div>
+        {% endif %}
+        </div>
+
     <section class="actx__container" id="pokedex">
         <div class="actx__content container">
             {% for projeto in projetos %}
-                <div class="projetos">
-                  <a href="{{projeto.get_absolute_url}}">
-                    <p class="text_projeto">{{ projeto.nome }}</p>
-                  </a>
-                </div>
+                 <div class="projetos">
+                <a href="{{projeto.get_absolute_url}}">
+                       <p class="text_projeto">{{projeto.nome}}</p>
+                </a>
+                 </div>
             {% endfor %}
         </div>
       </section>
-
   </body>
 </html>
