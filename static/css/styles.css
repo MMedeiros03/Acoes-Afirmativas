@@ -255,7 +255,8 @@ main {
   width: 330px;
 }
 .card__description {
-  text-align: justify;
+  text-align: center;
+  font-size: 20px;
 }
 
 .inverter-text {
@@ -694,13 +695,15 @@ main {
     justify-content: center;
   }
   .card__title {
-    text-align: left;
+    text-align: center;
+    font-size: 25px;
   }
   .cards__container img {
     width: 40%;
   }
   .card__description {
     width: auto;
+    font-size:20;
   }
 
   .dot {
