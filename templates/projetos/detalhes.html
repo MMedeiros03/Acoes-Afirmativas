@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +10,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-
     <title>{{projeto.nome}}</title>
   </head>
   <body>
@@ -50,12 +48,22 @@
         </div>
     </header>
 
+    <main>
+      <center>
+      <section class="container" id="home">
+        <div class="home__content container">
+          <div class="home__title__container">
+            <h1 class="home__title">{{projeto.nome}}</h1>
+          </div>
+          <img src="{% static 'imagens/logo_ifsc.png' %}"  alt="Persons image" />
+        </div>
+      </section>
+    </center>
 
     <section class="actions__container" id="acoesafirmativas">
         <div class="actions__content container">
           <img class="bg-image bg1" src="{% static 'imagens/bg1.svg' %}" alt="" />
           <img class="bg-image bg2" src="{% static 'imagens/bg2.svg' %}"alt="" />
-          <h2 class="section__title" style="font-size: 40px;">{{projeto.nome}}
   
           <div class="actions__cards__container">
             <div class="actions__line"></div>
@@ -130,6 +138,17 @@
                   </p>
                 </div>
             </div>
+
+            <div class="cards__container">
+              <img src="{% static 'imagens/ifsc.png' %}" alt="ifsc image" />
+              <div class="dot"></div>
+              <div class="card__text__container">
+                <p class="acoes__description">
+                      <a href="{{projeto.anexo}}">Baixar arquivo do projeto</a>
+                </p>
+              </div>
+          </div>
+
           </div>
         </div>
       </section>

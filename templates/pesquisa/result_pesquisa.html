@@ -53,11 +53,20 @@
         </div>
     </header>
 
+    <main>
+      <center>
+      <section class="container" id="home">
+        <div class="home__content container">
+          <div class="home__title__container">
+            <h1 class="home__title">Resultado para {{ query }}</h1>
+          </div>
+          <img src="{% static 'imagens/logo_ifsc.png' %}"  alt="Persons image" />
+        </div>
+      </section>
+
+    </center>
     <div class='row mb-3'>
         {% if query %}
-        <div class='col 12'>
-            Resultado para <b>{{ query }}</b>
-        </div>
         {% else %}
         <div class='col-12 col-md-8 mx-auto py-5'>
           <form method="GET" action="{% url 'pesquisa:query' %}">
@@ -78,7 +87,7 @@
             {% for projeto in projetos %}
                  <div class="projetos">
                 <a href="{{projeto.get_absolute_url}}">
-                       <p class="text_projeto">{{projeto.nome}}</p>
+                       <p class="text_projeto">{{projeto}}</p>
                 </a>
                  </div>
             {% endfor %}

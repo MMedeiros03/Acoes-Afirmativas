@@ -2,6 +2,8 @@ from xml.sax.handler import property_interning_dict
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Projetos
+from django.views import View
+import requests
 
 # Create your views here.
 
@@ -53,3 +55,12 @@ def Detalhes_Projeto(request,id=None,*args,**kwargs):
     projeto = get_object_or_404(Projetos,id = id)
     return render(request,"projetos/detalhes.html",{"projeto":projeto})
 
+
+def baixar_projeto(url, endereco):
+    resposta = requests.get(url)
+    if resposta.status_code == requests.codes.OK:
+        with open(endereco, 'wb') as novo_arquivo:
+            novo_arquivo.write(resposta.content)
+        print("Donwload finalizado. Salvo em: {}".format(endereco))
+    else:
+        resposta.raise_for_status()
