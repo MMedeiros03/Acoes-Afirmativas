@@ -1,4 +1,4 @@
-from xml.sax.handler import property_interning_dict
+from django.db.models import Q
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Projetos
@@ -50,7 +50,7 @@ def Cadastrar_Projeto(request):
                                     publico_alvo=publico_alvo)
     return redirect("/")
 
-
+@login_required(login_url="/accounts/login/")
 def Detalhes_Projeto(request,id=None,*args,**kwargs):
     projeto = get_object_or_404(Projetos,id = id)
     return render(request,"projetos/detalhes.html",{"projeto":projeto})
@@ -64,3 +64,13 @@ def baixar_projeto(url, endereco):
         print("Donwload finalizado. Salvo em: {}".format(endereco))
     else:
         resposta.raise_for_status()
+
+def pesquisa(request,*args,**kwargs):
+        query = request.GET.get('q',None)
+        if query is not None:
+            lookups = (Q(nome__icontains = query) | 
+                        Q(tematica__icontains = query) | 
+                        Q(publico_alvo__icontains = query))
+            projeto = Projetos.objects.filter(lookups)
+            print(projeto)
+            return render(request,"pesquisa/result_pesquisa.html",{"projetos":projeto, "query":query})

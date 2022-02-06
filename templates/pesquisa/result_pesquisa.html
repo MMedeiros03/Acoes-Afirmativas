@@ -39,15 +39,15 @@
         <div class="search__container" id="search-container">
           <div class="search-content">
             <div class="search__content">
-            <form method="GET" action="{% url 'pesquisa:query' %}">
-              <input
-                type="search"
-                name="q"
-                aria-label="Search" 
-                value='{{ request.GET.q }}'
-                placeholder="Pesquise Aqui"
-              />
-            </form>
+              <form method="GET" action="{% url 'projetos:pesquisa' %}">
+                <input
+                  type="search"
+                  name="q"
+                  aria-label="Search" 
+                  value='{{ request.GET.q }}'
+                  placeholder="Pesquise Aqui"
+                />
+              </form>
             </div>
           </div>
         </div>
@@ -65,32 +65,30 @@
       </section>
 
     </center>
-    <div class='row mb-3'>
         {% if query %}
         {% else %}
-        <div class='col-12 col-md-8 mx-auto py-5'>
-          <form method="GET" action="{% url 'pesquisa:query' %}">
-            <input
-              type="search"
-              name="q"
-              aria-label="Search" 
-              value='{{ request.GET.q }}'
-              placeholder="Pesquise Aqui"
-            />
-          </form>
+        <form method="GET" action="{% url 'projetos:pesquisa' %}">
+          <input
+            type="search"
+            name="q"
+            aria-label="Search" 
+            value='{{ request.GET.q }}'
+            placeholder="Pesquise Aqui"
+          />
+        </form>
         </div>
         {% endif %}
         </div>
 
     <section class="actx__container" id="pokedex">
         <div class="actx__content container">
-            {% for projeto in projetos %}
-                 <div class="projetos">
-                <a href="{{projeto.get_absolute_url}}">
-                       <p class="text_projeto">{{projeto}}</p>
-                </a>
-                 </div>
-            {% endfor %}
+          {% for projeto in projetos %}
+          <div class="projetos">
+            <a href="{{projeto.get_absolute_url}}">
+              <p class="text_projeto">{{ projeto.nome }}</p>
+            </a>
+          </div>
+      {% endfor %}
         </div>
       </section>
   </body>

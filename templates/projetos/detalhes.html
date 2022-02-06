@@ -34,15 +34,15 @@
         <div class="search__container" id="search-container">
           <div class="search-content">
             <div class="search__content">
-            <form method="GET" action="{% url 'pesquisa:query' %}">
-              <input
-                type="search"
-                name="q"
-                aria-label="Search" 
-                value='{{ request.GET.q }}'
-                placeholder="Pesquise Aqui"
-              />
-            </form>
+              <form method="GET" action="{% url 'projetos:pesquisa' %}">
+                <input
+                  type="search"
+                  name="q"
+                  aria-label="Search" 
+                  value='{{ request.GET.q }}'
+                  placeholder="Pesquise Aqui"
+                />
+              </form>
             </div>
           </div>
         </div>
