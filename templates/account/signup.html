@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <title>Ações Afirmativas</title>
+  </head>
+  <body>
+    <header class="header__container">
+      <div class="header__content container">
+        <a class="nav-links" href="/">Repositório de<br>Açoes Afirmativas</a>
+  
+        <nav class="nav__container" id="nav-menu">
+          <ul class="nav__content">
+            <li><a href="#acoesafirmativas" class="nav-links">Ações Afirmativas</a></li>
+            <li><a href="#projetos" class="nav-links">Projetos</a></li>
+            <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
+            {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-links" href="{% url 'account_logout' %}">Sair</a>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'account_login' %}"class="nav-links">Entrar</a></li>
+                    <li class="nav-item">
+                        <a class="nav-links" href="{% url 'account_signup' %}">Cadastro</a>
+                    </li>
+            {% endif %}
+          </ul>
+        </nav>
+        
+        <div class="search__container" id="search-container">
+          <div class="search-content">
+            <div class="search__content">
+              <form method="GET" action="{% url 'projetos:pesquisa' %}">
+                <input
+                  type="search"
+                  name="q"
+                  aria-label="Search" 
+                  value='{{ request.GET.q }}'
+                  placeholder="Pesquise Aqui"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="container" id="home">
+        <form class="signup" id="signup_form" method="post" action="/accounts/signup/">
+            <input type="hidden" name="csrfmiddlewaretoken" value="8RgntGzSPpjk9SMSm4L136dFSHwL4Hi62zVVsy8cENR2GdubsKeZJLcWnARosGew">
+            <p>
+              <label for="id_username">Nome de usuário:</label>
+              <input type="text" name="username" placeholder="Nome de usuário" autocomplete="username" minlength="1" maxlength="150" required id="id_username">
+              
+              
+            </p>
+          
+            
+            <p>
+              <label for="id_email">E-mail (opcional):</label>
+              <input type="email" name="email" placeholder="Endereço de e-mail" autocomplete="email" id="id_email">
+              
+              
+            </p>
+          
+            
+            <p>
+              <label for="id_password1">Senha:</label>
+              <input type="password" name="password1" placeholder="Senha" autocomplete="new-password" required id="id_password1">
+              
+              
+            </p>
+          
+            
+            <p>
+              <label for="id_password2">Senha (novamente):</label>
+              <input type="password" name="password2" placeholder="Senha (novamente)" autocomplete="new-password" required id="id_password2">
+              
+              
+                
+              
+            </p>
+            
+            <button type="submit">Cadastro &raquo;</button>
+          </form>
+        </section>
+
