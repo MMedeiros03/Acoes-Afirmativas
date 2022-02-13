@@ -20,9 +20,9 @@
   
         <nav class="nav__container" id="nav-menu">
           <ul class="nav__content">
-            <li><a href="#acoesafirmativas" class="nav-links">Ações Afirmativas</a></li>
-            <li><a href="#projetos" class="nav-links">Projetos</a></li>
-            <li><a href="#sobrenos" class="nav-links">Sobre-nós</a></li>
+            <li><a href="/" class="nav-links">Ações Afirmativas</a></li>
+            <li><a href="/" class="nav-links">Projetos</a></li>
+            <li><a href="/" class="nav-links">Sobre-nós</a></li>
             {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-links" href="{% url 'account_logout' %}">Sair</a>
@@ -55,17 +55,17 @@
 
     <main>
       <section class="container" id="home">
+          <div class="container_logout">
             <h1>Sair</h1>
-
-            <p>Você tem certeza que deseja sair?</p>
-
+            <p>Você tem certeza que deseja sair?</p> <br><br>
             <form method="post" action="{% url 'account_logout' %}">
-              {% csrf_token %}
-              {% if redirect_field_value %}
-              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-              {% endif %}
-              <button type="submit"> Sair </button>
+                {% csrf_token %}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+                <button class="btn-logout" type="submit"> Sair </button>
             </form>
+          </div>
         </section>
     <main>
 </body>
