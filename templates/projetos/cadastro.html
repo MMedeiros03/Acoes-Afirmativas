@@ -62,49 +62,50 @@
       </section>
     </center>
 
-    <section class="form_projetos" >
-            <form action="submit" method="POST" >{% csrf_token %}
-
-                <div class="form1">
-                    <input type="number" name="id_projeto" value="{{ projetos.id_projeto }}" hidden>
-
-                    <label>Nome</label>
-                    <input type="text" name="nome" value="{{ projetos.nome }}">
-                    <br>
-
-                    <label>tematica</label>
-                    <input type="text" name="tematica" value="{{ projetos.tematica }}">
-                    <br>
-
-                    <label>Objetivo</label>
-                    <input type="text" name="objetivo" value="{{ projetos.objetivo }}">
-                    <br>
-
-                    <label>Publico Alvo</label>
-                    <input type="text" name="publico_alvo" value="{{ projetos.publico_alvo }}">
-                    <br>
-                </div>
-
-                <div class="form2">
-                    <label>justificativa</label>
-                    <br>
-                    <textarea name="justificativa" cols="23" rows="5">{{ projetos.justificativa }}</textarea>
-                    <br>
-
-                    <label>Imagem</label>
-                    <input type="file" name="imagem" value="{{ projetos.imagem }}">
-                    <br>
-
-                    <label>Arquivo</label>
-                    <input type="file" name="anexo" value="{{ projetos.anexo }}">
-                    <br><br>
-                </div>
-                
-                <button type="submit" class="salvar">Salvar</button>
-                <a href="/">
-                    <button type="button" class="cancelar">Cancelar</button>
-                </a>
-            </form>
-      </section>
+      <center>
+      <div class="container_cadastro">
+        <div class="content_cadastro">
+          <form action="submit" method="POST" >{% csrf_token %}
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Nome</span>
+                <input type="text" name="nome" placeholder="Digite o nome do projeto" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Tematica</span>
+                <input type="text" name="tematica" placeholder="Digite a tematica do projeto" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Objetivo</span>
+                <input type="text" name="objetivo" placeholder="Digite a tematica do projeto" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Publico Alvo</span>
+                <input type="text" name="publico_alvo" placeholder="Diigte o publico alvo" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Anexo</span>
+                <input type="file" name="anexo" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Imagem</span>
+                <input type="file" name="imagem" required>
+              </div>
+              <div class="input-box">
+                <span class="details">justificativa</span>
+                <textarea name="justificativa" cols="80" rows="5" placeholder="Digite a justificativa do projeto">{{ projetos.justificativa }}</textarea>
+              </div>
+            
+            </div>
+            <div class="button">
+              <input type="submit" value="Cadastradar">
+            </div>
+            <div class="btn-logout">
+              <a href="/" style="color: white;">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </center>
   </body>
 </html>
