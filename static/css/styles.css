@@ -1355,6 +1355,9 @@ form .user-details .input-box{
   transition: all 0.3s ease;
   font-weight: 500;
   font-family: -apple-system, Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
+.btn_cadastrar_projeto p{
+  padding-top: 5%;
 }
 
