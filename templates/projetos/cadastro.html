@@ -1,37 +1,110 @@
-{% block title %}Cadastrar Projetos{% endblock %}
+{% load static %}
 
-{% block content %}
-    <h2>Cadastrar Projeto</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
-    <div>
-        <form action="submit" method="POST">{% csrf_token %}
-            <input type="number" name="id_projeto" value="{{ projetos.id_projeto }}" hidden>
-            <label>Nome</label>
-            <br>
-            <input type="text" name="nome" value="{{ projetos.nome }}">
-            <br>
-            <label>tematica</label>
-            <br>
-            <input type="text" name="tematica" value="{{ projetos.tematica }}">
-            <br>
-            <label>Objetivo</label>
-            <br>
-            <input type="text" name="objetivo" value="{{ projetos.objetivo }}">
-            <br>
-            <label>Publico Alvo</label>
-            <br>
-            <input type="text" name="publico_alvo" value="{{ projetos.publico_alvo }}">
-            <br>
-            <label>justificativa</label>
-            <br>
-            <textarea name="justificativa" cols="23" rows="5">{{ projetos.justificativa }}</textarea>
-            <br>
-            <br>
-            <button type="submit">Salvar</button>
-            <a href="/">
-                <button type="button">Cancelar</button>
-            </a>
-        </form>
-    </div>
+    <title>Ações Afirmativas</title>
+  </head>
+  <body>
+    <header class="header__container">
+      <div class="header__content container">
+        <a class="nav-links" href="/">Repositório de<br>Açoes Afirmativas</a>
+  
+        <nav class="nav__container" id="nav-menu">
+          <ul class="nav__content">
+            <li><a href="/" class="nav-links">Ações Afirmativas</a></li>
+            <li><a href="/" class="nav-links">Projetos</a></li>
+            <li><a href="/" class="nav-links">Sobre-nós</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-links" href="{% url 'account_logout' %}">Sair</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-links" href="{% url 'account_login' %}">Entrar</a></li>
+            <li class="nav-item"><a class="nav-links" href="{% url 'account_signup' %}">Cadastro</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+        
+        <div class="search__container" id="search-container">
+          <div class="search-content">
+            <div class="search__content">
+            <form method="GET" action="{% url 'projetos:pesquisa' %}">
+              <input
+                type="search"
+                name="q"
+                aria-label="Search" 
+                value='{{ request.GET.q }}'
+                placeholder="Pesquise Aqui"
+              />
+            </form>
+            </div>
+          </div>
+        </div>
+    </header>
+    
+    <main>
+      <center>
+      <section class="container" id="home">
+        <div class="home__content container">
+          <div class="home__title__container">
+            <h1 class="home__title">Cadastradar Seu Projeto</h1>
+          </div>
+          <img src="{% static 'imagens/logo_ifsc.png' %}"  alt="Persons image" />
+        </div>
+      </section>
+    </center>
 
-{% endblock %}
+    <section class="form_projetos" >
+            <form action="submit" method="POST" >{% csrf_token %}
+
+                <div class="form1">
+                    <input type="number" name="id_projeto" value="{{ projetos.id_projeto }}" hidden>
+
+                    <label>Nome</label>
+                    <input type="text" name="nome" value="{{ projetos.nome }}">
+                    <br>
+
+                    <label>tematica</label>
+                    <input type="text" name="tematica" value="{{ projetos.tematica }}">
+                    <br>
+
+                    <label>Objetivo</label>
+                    <input type="text" name="objetivo" value="{{ projetos.objetivo }}">
+                    <br>
+
+                    <label>Publico Alvo</label>
+                    <input type="text" name="publico_alvo" value="{{ projetos.publico_alvo }}">
+                    <br>
+                </div>
+
+                <div class="form2">
+                    <label>justificativa</label>
+                    <br>
+                    <textarea name="justificativa" cols="23" rows="5">{{ projetos.justificativa }}</textarea>
+                    <br>
+
+                    <label>Imagem</label>
+                    <input type="file" name="imagem" value="{{ projetos.imagem }}">
+                    <br>
+
+                    <label>Arquivo</label>
+                    <input type="file" name="anexo" value="{{ projetos.anexo }}">
+                    <br><br>
+                </div>
+                
+                <button type="submit" class="salvar">Salvar</button>
+                <a href="/">
+                    <button type="button" class="cancelar">Cancelar</button>
+                </a>
+            </form>
+      </section>
+  </body>
+</html>
