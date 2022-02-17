@@ -1,4 +1,4 @@
-from django import environ 
+import environ 
 
 from AcoesAfirmativas.settings.base import *
 
