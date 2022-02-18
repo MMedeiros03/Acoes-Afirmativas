@@ -1,3 +1,2 @@
 release: python manage.py migrate
-
-web: gunicorn AcoesAfirmativas.wsgi --preload --log-file -
+web: gunicorn tutorialdjango.wsgi --preload --log-file –
