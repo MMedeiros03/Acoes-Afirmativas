@@ -2,14 +2,12 @@ from django.db.models import Q
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Projetos
-from django.views import View
-import requests
+
 
 # Create your views here.
 
 def listar_projetos(request):
     projeto = Projetos.objects.all()
-    print(projeto)
     return render(request,"projetos/listagem.html",{"projetos":projeto})
 
 # Função para listar projetos em destaque
@@ -63,5 +61,4 @@ def pesquisa(request,*args,**kwargs):
                         Q(tematica__icontains = query) | 
                         Q(publico_alvo__icontains = query))
             projeto = Projetos.objects.filter(lookups)
-            print(projeto)
             return render(request,"pesquisa/result_pesquisa.html",{"projetos":projeto, "query":query})
