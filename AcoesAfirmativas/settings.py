@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'projetos',
     'pages',
-    'pesquisa',
 
     #allauth
     'allauth',

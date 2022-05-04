@@ -21,5 +21,4 @@ urlpatterns = [
     path('accounts/',include("allauth.urls")),
     path('', include('pages.urls')),
     path('projetos/',include('projetos.urls')),
-    path('pesquisa/',include('pesquisa.urls',namespace='pesquisa')),
 ]
